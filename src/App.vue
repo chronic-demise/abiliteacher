@@ -2,7 +2,7 @@
     <div id="app">
         <Actionbar
             :config="config"
-            :abilities="['corruption_shot', 'needle_strike', null, 'needle_strike', null, null, null, null]" />
+            :abilities="['corruption_shot', null, 'needle_strike', null, null, null, null]" />
     </div>
 </template>
 
