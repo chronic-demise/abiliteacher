@@ -2,19 +2,17 @@
     <div id="app">
         <Actionbar
             :config="config"
-            :numIcons="8"
-            :abilities="['corruption_shot', 'needle_strike']" />
+            :abilities="['corruption_shot', 'needle_strike', null, 'needle_strike', null, null, null, null]" />
     </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 import Actionbar from './components/Actionbar.vue'
 
 export default {
     name: 'App',
     components: {
-        Actionbar
+        Actionbar,
     },
     data: function() {
         return {

@@ -1,39 +1,42 @@
 <template>
     <div class="actionbar">
-        <div v-for="item in numIcons" v-bind:key="item">
-            <div v-if="abilities[item - 1] != null">
-                <img class="ability_icon" v-bind:src="config[abilities[item - 1]].icon" />
+        <draggable v-model="abilities">
+            <div v-for="ability in abilities" :key="ability" class="ability_icon">
+                <img v-if="ability != null" :src="config[ability].icon" />
+                <img v-else :src="config.empty_slot.icon" />
             </div>
-            <div v-else>
-                <img class="ability_icon" v-bind:src="config.empty_slot.icon" />
-            </div>
-        </div>
+        </draggable>
     </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
     name: 'Actionbar',
+    components: {
+        draggable,
+    },
     props: {
-        numIcons: Number,
         abilities: Array,
         config: Object,
-    }
+    },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.ability_icon {
-    width: 36px;
-    height: 36px;
-    float: left;
-    padding: 2px;
+.actionbar {
+    display: flex;
 }
 
-.actionbar:after {
-    display: block;
-    content: "";
-    clear: both;
+.ability_icon {
+    padding: 2px;
+    display: inline;
+}
+
+.ability_icon img {
+    width: 36px;
+    height: 36px;
 }
 </style>
