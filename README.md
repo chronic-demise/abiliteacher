@@ -1,4 +1,4 @@
-# abili-teacher
+# abiliteacher
 
 ## Project setup
 ```

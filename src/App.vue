@@ -2,7 +2,7 @@
     <div id="app">
         <Actionbar
             :config="config"
-            :abilities="['corruption_shot', null, 'needle_strike', null, null, null, null]" />
+            :abilities="['corruption_shot', 'needle_strike', 'fragmentation_shot', null, null, null]" />
     </div>
 </template>
 
@@ -22,6 +22,9 @@ export default {
                 },
                 "needle_strike": {
                     "icon": "icons/needle_strike.webp",
+                },
+                "fragmentation_shot": {
+                    "icon": "icons/fragmentation_shot.png",
                 },
                 "empty_slot": {
                     "icon": "icons/empty_slot.png",
