@@ -1,7 +1,7 @@
 <template>
     <div class="actionbar">
         <!-- Actionbar -->
-        <draggable v-model="abilitiesModel" :disabled="editable" @update="onDragUpdate" group="shared">
+        <draggable v-model="abilitiesModel" :disabled="true" group="shared">
             <AbilityIcon v-for="ability in abilitiesModel" :key="ability" :ability="ability" :config="config" />
         </draggable>
         
@@ -16,11 +16,15 @@
             <div class="modal" v-if="modalVisible">
                 <div class="container">
                     <div class="title">Edit Actionbar</div>
-                    <Actionbar :abilities="abilitiesModel" :config="config" :editable="false"
-                        @onUpdate="onEditActionbarUpdated" />
+                    <br/>
+                    
+                    <draggable v-model="abilitiesModel" :disabled="false" group="shared">
+                        <AbilityIcon v-for="ability in abilitiesModel" :key="ability" :ability="ability" :config="config" />
+                    </draggable>
                     <br/><br/>
                     
-                    <AbilityPanel :abilityConfig="config" :filterFunc="filterRanged" />
+                    <AbilityPanel :abilityConfig="config" :filterFunc="filterRanged"
+                        @draggedToBar="updateModel" />
                     <br/><br/>
                     
                     <button @click.prevent="closeEditModal">Close</button>
@@ -65,11 +69,8 @@ export default {
             }
             return filtered;
         },
-        onDragUpdate() {
-            this.$emit("onUpdate", this.abilitiesModel);
-        },
-        onEditActionbarUpdated(abilities) {
-            this.abilitiesModel = abilities;
+        updateModel(newModel) {
+            this.abilitiesModel = newModel;
         },
         openEditModal() {
             this.modalVisible = true;
