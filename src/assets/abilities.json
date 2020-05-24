@@ -1,0 +1,55 @@
+{
+    "piercing_shot": {
+        "icon": "icons/corruption_shot.webp",
+        "type": "basic",
+        "skill": "ranged",
+        "adrenaline": 8,
+        "cooldown": 5
+    },
+    "binding_shot": {
+        "icon": "icons/binding_shot.webp",
+        "type": "basic",
+        "skill": "ranged",
+        "adrenaline": 8,
+        "cooldown": 25
+    },
+    "snap_shot": {
+        "icon": "icons/snap_shot.webp",
+        "type": "threshold",
+        "skill": "ranged",
+        "adrenaline": -15,
+        "cooldown": 33.33
+    },
+    "deadshot": {
+        "icon": "icons/deadshot.webp",
+        "type": "ultimate",
+        "skill": "ranged",
+        "adrenaline": -100,
+        "cooldown": 50
+    },
+    "tight_bindings": {
+        "icon": "icons/tight_bindings.webp",
+        "type": "threshold",
+        "skill": "ranged",
+        "adrenaline": -15,
+        "cooldown": 25
+    },
+    "snipe": {
+        "icon": "icons/snipe.webp",
+        "type": "basic",
+        "skill": "ranged",
+        "adrenaline": 8,
+        "cooldown": 16.67
+    },
+    "dazing_shot": {
+        "icon": "icons/dazing_shot.png",
+        "type": "basic",
+        "skill": "ranged",
+        "adrenaline": 8,
+        "cooldown": 8.33
+    },
+    
+    "empty_slot": {
+        "icon": "icons/empty_slot.png"
+    }
+}

@@ -2,12 +2,14 @@
     <div id="app">
         <Actionbar
             :config="config"
-            :abilities="['corruption_shot', 'needle_strike', 'fragmentation_shot', null, null, null]" />
+            :abilities="['piercing_shot', 'snap_shot', 'snipe', 'deadshot']" />
     </div>
 </template>
 
 <script>
 import Actionbar from './components/Actionbar.vue'
+
+import abilities from "./assets/abilities.json";
 
 export default {
     name: 'App',
@@ -16,20 +18,7 @@ export default {
     },
     data: function() {
         return {
-            "config": {
-                "corruption_shot": {
-                    "icon": "icons/corruption_shot.webp",
-                },
-                "needle_strike": {
-                    "icon": "icons/needle_strike.webp",
-                },
-                "fragmentation_shot": {
-                    "icon": "icons/fragmentation_shot.png",
-                },
-                "empty_slot": {
-                    "icon": "icons/empty_slot.png",
-                }
-            }
+            "config": abilities
         }
     }
 }
