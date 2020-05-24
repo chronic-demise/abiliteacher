@@ -2,7 +2,8 @@
     <div id="app">
         <Actionbar
             :config="config"
-            :abilities="['piercing_shot', 'snap_shot', 'snipe', 'deadshot']" />
+            :abilities="['piercing_shot', 'snap_shot', 'snipe', 'deadshot', null, null, null]"
+            :keybinds="['Q', 'W', 'E', 'R', 'T', 'Y']" />
     </div>
 </template>
 

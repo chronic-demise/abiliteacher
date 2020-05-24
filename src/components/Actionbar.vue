@@ -2,7 +2,8 @@
     <div class="actionbar">
         <!-- Actionbar -->
         <draggable v-model="abilitiesModel" :disabled="true" group="shared">
-            <AbilityIcon v-for="ability in abilitiesModel" :key="ability" :ability="ability" :config="config" />
+            <AbilityIcon v-for="(ability, idx) in abilitiesModel" :key="ability" :ability="ability" :config="config"
+                :keybind="keybinds[idx]" />
         </draggable>
         
         <!-- Editable Container -->
@@ -46,6 +47,7 @@ export default {
     },
     props: {
         abilities: Array,
+        keybinds: Array,
         config: Object,
         editable: {
             default: true,

@@ -1,5 +1,8 @@
 <template>
     <div class="ability-icon">
+        <div v-if="keybind != null" class="keybind-label">
+            {{ keybind }}
+        </div>
         <img v-if="ability != null" :src="config[ability].icon" />
         <img v-else :src="config.empty_slot.icon" />
     </div>
@@ -17,6 +20,7 @@ export default {
             type: Object,
             required: true,
         },
+        keybind: String,
         interactive: {
             type: Boolean,
             default: false,
@@ -40,5 +44,15 @@ export default {
     width: 36px;
     height: 36px;
     vertical-align: top;
+}
+
+.keybind-label {
+    position: absolute;
+    margin-left: 2px;
+    vertical-align: bottom;
+    color: #FFF;
+    text-shadow: 2px 2px #000;
+    line-height: 50px;
+    user-select: none;
 }
 </style>
