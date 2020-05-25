@@ -37,7 +37,6 @@ export default {
         onMove(evt) {
             if (this.initialList == null) {
                 this.initialList = [...evt.relatedContext.list];
-                //console.log(this.initialList);
             }
             
             // Splice the dragged item into the target list and publish it
@@ -51,7 +50,7 @@ export default {
         },
         onEnd(evt) {
             evt;
-            //console.log(evt);
+            
             // TODO need to handle multiple drop targets..? Can do so by checking "evt.to"
             this.initialList = null;
         },
