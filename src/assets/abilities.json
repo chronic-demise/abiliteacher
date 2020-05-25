@@ -1,6 +1,6 @@
 {
     "piercing_shot": {
-        "icon": "icons/corruption_shot.webp",
+        "icon": "icons/piercing_shot.webp",
         "type": "basic",
         "skill": "ranged",
         "adrenaline": 8,
