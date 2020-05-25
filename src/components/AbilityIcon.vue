@@ -6,7 +6,9 @@
         </div>
         
         <!-- Cooldown Label -->
-        <div v-show="cooldown > 0" class="cooldown-label">
+        <!-- Note: we use 'v-if' instead of 'v-show' here because otherwise we get page timeouts
+             upon dragging & dropping abilities for some strange reason -->
+        <div v-if="cooldown > 0" class="cooldown-label">
             {{ (cooldown &lt; 10) ? cooldown.toFixed(1) : cooldown.toFixed(0) }}
         </div>
         
@@ -42,13 +44,13 @@ export default {
             cooldown: 0.0, // In seconds
         }
     },
-    watch: {
-        cooldown: function(newCooldown, oldCooldown) {
-            // TODO do we need this?
-            newCooldown;
-            oldCooldown;
-        }
-    }
+    //watch: {
+    //    cooldown: function(newCooldown, oldCooldown) {
+    //        // TODO do we need this?
+    //        newCooldown;
+    //        oldCooldown;
+    //    }
+    //}
 }
 </script>
 
