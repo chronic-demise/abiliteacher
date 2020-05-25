@@ -1,9 +1,9 @@
 <template>
-    <div class="actionbar">
+    <div class="actionbar primary-bg">
         <!-- Actionbar -->
         <draggable v-model="abilitiesModel" :disabled="true" group="shared">
-            <AbilityIcon v-for="(ability, idx) in abilitiesModel" :key="ability" :ability="ability" :config="config"
-                :keybind="keybinds[idx]" />
+            <AbilityIcon v-for="(ability, idx) in abilitiesModel"
+                :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
         </draggable>
         
         <!-- Editable Container -->
@@ -19,9 +19,13 @@
                     <div class="title">Edit Actionbar</div>
                     <br/>
                     
-                    <draggable v-model="abilitiesModel" :disabled="false" group="shared">
-                        <AbilityIcon v-for="ability in abilitiesModel" :key="ability" :ability="ability" :config="config" />
-                    </draggable>
+                    <!--<Actionbar :abilities="abilitiesModel" :keybinds="keybindsModel" :config="config" :editable="false"/>-->
+                    <div class="actionbar primary-bg">
+                        <draggable v-model="abilitiesModel" :disabled="false" group="shared">
+                            <AbilityIcon v-for="(ability, idx) in abilitiesModel"
+                                :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
+                        </draggable>
+                    </div>
                     <br/><br/>
                     
                     <AbilityPanel :abilityConfig="config" :filterFunc="filterRanged"
@@ -58,6 +62,7 @@ export default {
         return {
             modalVisible: false,
             abilitiesModel: this.abilities,
+            keybindsModel: this.keybinds,
         };
     },
     methods: {
@@ -93,7 +98,6 @@ export default {
 
 .actionbar {
     display: inline-flex;
-    background: #666;
     padding: 4px;
 }
 .settings-icon {

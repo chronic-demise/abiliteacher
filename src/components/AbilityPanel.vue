@@ -1,5 +1,5 @@
 <template>
-    <div class="ability-panel">
+    <div class="ability-panel primary-bg">
         <draggable v-model="abilities" :group="{name: 'shared', pull: 'clone'}" :sort="false"
             :move="onMove" @end="onEnd">
             <AbilityIcon v-for="(config, ability) in filteredAbilityConfig" :key="ability" :ability="ability" :config="filteredAbilityConfig" />
@@ -69,7 +69,6 @@ export default {
 
 .ability-panel {
     display: inline-flex;
-    background: #666;
     padding: 4px;
     width: 120px;
     text-align: left;

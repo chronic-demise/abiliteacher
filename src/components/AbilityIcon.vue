@@ -50,9 +50,10 @@ export default {
     position: absolute;
     margin-left: 2px;
     vertical-align: bottom;
+    font-size: 90%;
     color: #FFF;
-    text-shadow: 2px 2px #000;
-    line-height: 50px;
+    text-shadow: 2px 2px #000, 1px 1px #000;
+    line-height: 54px;
     user-select: none;
 }
 </style>
