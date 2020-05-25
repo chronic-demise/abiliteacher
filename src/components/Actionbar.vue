@@ -1,7 +1,7 @@
 <template>
     <div class="actionbar primary-bg">
         <!-- Actionbar -->
-        <draggable v-model="abilitiesModel" :disabled="true" group="shared">
+        <draggable v-model="abilitiesModel" :disabled="true" group="shared" filter=".empty-slot">
             <AbilityIcon v-for="(ability, idx) in abilitiesModel"
                 :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
         </draggable>
@@ -21,7 +21,7 @@
                     
                     <!--<Actionbar :abilities="abilitiesModel" :keybinds="keybindsModel" :config="config" :editable="false"/>-->
                     <div class="actionbar primary-bg">
-                        <draggable v-model="abilitiesModel" :disabled="false" group="shared">
+                        <draggable v-model="abilitiesModel" :disabled="false" group="shared" filter=".empty-slot">
                             <AbilityIcon v-for="(ability, idx) in abilitiesModel"
                                 :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
                         </draggable>

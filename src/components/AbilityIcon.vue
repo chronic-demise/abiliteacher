@@ -1,5 +1,5 @@
 <template>
-    <div class="ability-icon">
+    <div :class="'ability-icon' + ((ability == null) ? ' empty-slot' : '')">
         <div v-if="keybind != null" class="keybind-label">
             {{ keybind }}
         </div>
