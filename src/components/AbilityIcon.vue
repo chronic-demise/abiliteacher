@@ -81,12 +81,14 @@ export default {
 }
 .cooldown-label {
     position: absolute;
+    margin-top: -1px;
     vertical-align: top;
     text-align: right;
-    width: 32px;
+    width: 34px;
     font-size: 90%;
-    color: #FFF;
-    text-shadow: 2px 2px #000, 1px 1px #000;
+    color: #F00;
+    font-weight: bold;
+    text-shadow: 1px 1px #000, -1px -1px #000;
     user-select: none;
 }
 </style>
