@@ -78,7 +78,7 @@ AbilityManager.onUpdate = function() {
     }
     
     for (var j = toRemove.length - 1; j >= 0; j--) {
-        AbilityManager._activeCooldowns.splice(j, 1);
+        AbilityManager._activeCooldowns.splice(toRemove[j], 1);
     }
 }
 
