@@ -1,6 +1,6 @@
 <template>
     <div class="ability-panel primary-bg">
-        <draggable v-model="abilities" :group="{name: 'shared', pull: 'clone'}" :sort="false"
+        <draggable v-model="abilities" :group="{name: 'shared', pull: 'clone', put: false}" :sort="false"
             :move="onMove" @end="onEnd">
             <AbilityIcon v-for="(config, ability) in filteredAbilityConfig" :key="ability" :ability="ability" :config="filteredAbilityConfig" />
         </draggable>
@@ -35,15 +35,14 @@ export default {
     },
     methods: {
         onMove(evt) {
-            if (this.initialList == null)
-            {
+            if (this.initialList == null) {
                 this.initialList = [...evt.relatedContext.list];
-                console.log(this.initialList);
+                //console.log(this.initialList);
             }
             
             // Splice the dragged item into the target list and publish it
             var newList = [...this.initialList];
-            newList[evt.relatedContext.index] = evt.draggedContext.element;
+            newList[evt.relatedContext.index] = this.$makeAbilityUnique(evt.draggedContext.element);
             
             this.$emit("draggedToBar", newList);
             
@@ -52,7 +51,7 @@ export default {
         },
         onEnd(evt) {
             evt;
-            
+            //console.log(evt);
             // TODO need to handle multiple drop targets..? Can do so by checking "evt.to"
             this.initialList = null;
         },

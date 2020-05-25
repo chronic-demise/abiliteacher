@@ -3,7 +3,7 @@
         <!-- Actionbar -->
         <draggable v-model="abilitiesModel" :disabled="true" group="shared" filter=".empty-slot">
             <AbilityIcon v-for="(ability, idx) in abilitiesModel"
-                :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
+                :key="ability.id" :ability="ability.ability" :config="config" :keybind="keybindsModel[idx]" />
         </draggable>
         
         <!-- Editable Container -->
@@ -23,7 +23,7 @@
                     <div class="actionbar primary-bg">
                         <draggable v-model="abilitiesModel" :disabled="false" group="shared" filter=".empty-slot">
                             <AbilityIcon v-for="(ability, idx) in abilitiesModel"
-                                :key="ability" :ability="ability" :config="config" :keybind="keybindsModel[idx]" />
+                                :key="ability.id" :ability="ability.ability" :config="config" :keybind="keybindsModel[idx]" />
                         </draggable>
                     </div>
                     <br/><br/>
@@ -61,7 +61,7 @@ export default {
     data: function() {
         return {
             modalVisible: false,
-            abilitiesModel: this.abilities,
+            abilitiesModel: this.$makeAbilitiesUnique(this.abilities),
             keybindsModel: this.keybinds,
         };
     },

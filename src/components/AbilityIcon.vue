@@ -14,7 +14,7 @@ export default {
     props: {
         ability: {
             type: String,
-            required: true,
+            required: false,
         },
         config: {
             type: Object,
